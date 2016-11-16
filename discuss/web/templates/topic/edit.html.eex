@@ -1,7 +1,7 @@
 <%= form_for @changeset, topic_path(@conn, :update, @topic), fn f -> %>
   <div class="form-group">
     <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
-    <%= errot_tag f, :title %>
+    <%= error_tag f, :title %>
   </div>
 
   <%= submit "Save Topic", class: "btn btn-primary" %>

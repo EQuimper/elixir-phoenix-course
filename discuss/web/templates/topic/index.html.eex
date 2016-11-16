@@ -13,7 +13,9 @@
 </ul>
 
 <div class="fixed-action-btn">
-  <%= link to: topic_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
-    <i class="material-icons">add</i>
+  <%= if @conn.assigns[:user] do %>
+    <%= link to: topic_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+      <i class="material-icons">add</i>
+    <% end %>
   <% end %>
 </div>

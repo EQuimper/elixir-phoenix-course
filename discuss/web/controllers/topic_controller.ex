@@ -12,6 +12,12 @@ defmodule Discuss.TopicController do
     render conn, "index.html", topics: topics
   end
 
+  def show(conn, %{"id" => topic_id}) do
+    # Repo.get! show 404 if nothing found
+    topic = Repo.get!(Topic, topic_id)
+    render conn, "show.html", topic: topic
+  end
+
   def new(conn, _params) do
     changeset = Topic.changeset(%Topic{}, %{})
 
